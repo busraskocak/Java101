@@ -16,12 +16,26 @@ public class Main {
             System.out.println("Bilgileriniz Yanlış.");
             System.out.println("Şifrenizi sıfırlamak ister misiniz? (Evet/Hayır):");
             newPassword=input.nextLine();
+            String secimisifirla = input.nextLine();
+
+            if (secimisifirla .equalsIgnoreCase("Evet")) {
+                System.out.print("Yeni Şifrenizi Giriniz: ");
+                newPassword = input.nextLine();
+
+                // Yeni şifre, eski şifre ve kullanıcı adı ile farklı olmalı
+                if (!newPassword.equals(password) && !newPassword.equals(userName)) {
+                    System.out.println("Şifre oluşturuldu.");
+                } else {
+                    System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+                }
+            } else {
+                System.out.println("Şifre sıfırlama işlemi iptal edildi.");
+            }
+        }
+    }
 
 
 
 
 
             }
-        }
-
-    }
